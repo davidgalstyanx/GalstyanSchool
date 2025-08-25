@@ -9,6 +9,14 @@ const CONFIG = {
     en: "Galstyan School",
     ru: "Школа Галстяна",
   },
+  owner: {
+    name: {
+      hy: "Մարատ Գալստյան",
+      en: "Marat Galstyan",
+      ru: "Марат Галստян",
+    },
+    photo: "/owner.jpg",
+  },
   logo: "/logo.svg",
   phone: "+374 (94) 766-409",
   email: "info@galstyanschool.com",
@@ -38,7 +46,7 @@ const I18N = {
     banner: "✨ Անվճար փորձնական դաս նոր ուսանողների համար — գրանցվեք այսօր",
     nav: {
       courses: "Դասընթացներ",
-      teachers: "Ուսուցիչներ",
+      founder: "Հիմնադիր",
       schedule: "Ժամացույց",
       pricing: "Գնացուցակ",
       faq: "ՀՏՀ",
@@ -88,15 +96,11 @@ const I18N = {
         },
       ],
     },
-    teachers: {
-      title: "Մեր ուսուցիչները",
+    founder: {
+      title: "Հիմնադիր",
       subtitle:
-        "Փորձառու մենթորներ՝ հստակության, պրակտիկայի և արդյունքների վրա կենտրոնացած։",
-      items: [
-        { name: "Մաթեմատիկայի Ուսուցիչ", blurb: "10+ տարվա փորձ օլիմպիադա և քննություններ։" },
-        { name: "Ֆիզիկայի Ուսուցիչ", blurb: "Լաբորատոր մոտեցում, փորձեր և ինտուիցիա։" },
-        { name: "Անգլերենի Ուսուցիչ", blurb: "Խոսքի վրա հիմնած դասեր՝ գործնական թեմաներ։" },
-      ],
+        "Փորձառու մենթոր՝ հստակության, պրակտիկայի և արդյունքների վրա կենտրոնացած։",
+      blurb: "10+ տարվա փորձ ուսանողների պատրաստման և ակադեմիական հաջողության ապահովման բնագավառում։",
     },
     schedule: {
       title: "Շաբաթական ժամացույց",
@@ -173,6 +177,11 @@ const I18N = {
         submit: "Ուղարկել",
         courseOptions: ["Մաթեմատիկա", "Ֆիզիկա", "Անգլերեն", "Ծրագրավորում"],
         formatOptions: ["Խմբակային", "Անհատական", "Առցանց", "Առկա"],
+        placeholders: {
+          name: "Արթուր Ավագյան",
+          email: "artur.avagyan@gmail.com",
+          time: "Երք 18:00",
+        },
       },
     },
     footer: {
@@ -183,7 +192,7 @@ const I18N = {
     banner: "✨ Free trial lesson for new students — book today",
     nav: {
       courses: "Courses",
-      teachers: "Teachers",
+      founder: "Founder",
       schedule: "Schedule",
       pricing: "Pricing",
       faq: "FAQ",
@@ -213,14 +222,10 @@ const I18N = {
         { icon: "💻", title: "Programming", desc: "Python & C++ from basics to algorithms, data structures, and projects." },
       ],
     },
-    teachers: {
-      title: "Meet our teachers",
-      subtitle: "Experienced mentors focused on clarity, practice, and results.",
-      items: [
-        { name: "Math Mentor", blurb: "10+ years teaching olympiad math & exams." },
-        { name: "Physics Mentor", blurb: "Lab‑first approach, demos & intuition building." },
-        { name: "English Mentor", blurb: "Speaking‑heavy lessons with practical topics." },
-      ],
+    founder: {
+      title: "Founder",
+      subtitle: "Experienced mentor focused on clarity, practice, and results.",
+      blurb: "10+ years of experience in student preparation and ensuring academic success.",
     },
     schedule: {
       title: "Weekly schedule",
@@ -297,6 +302,11 @@ const I18N = {
         submit: "Send",
         courseOptions: ["Math", "Physics", "English", "Programming"],
         formatOptions: ["Group", "1‑on‑1", "Online", "In‑person"],
+        placeholders: {
+          name: "Arthur Avagyan",
+          email: "arthur.avagyan@gmail.com",
+          time: "Tue 18:00",
+        },
       },
     },
     footer: {
@@ -307,7 +317,7 @@ const I18N = {
     banner: "✨ Бесплатный пробный урок для новых учеников — запишитесь сегодня",
     nav: {
       courses: "Курсы",
-      teachers: "Преподаватели",
+      founder: "Основатель",
       schedule: "Расписание",
       pricing: "Цены",
       faq: "Вопросы",
@@ -337,14 +347,10 @@ const I18N = {
         { icon: "💻", title: "Программирование", desc: "Python и C++ от основ до алгоритмов, структуры данных и проекты." },
       ],
     },
-    teachers: {
-      title: "Наши преподаватели",
-      subtitle: "Опытные наставники, ориентированные на практику и результат.",
-      items: [
-        { name: "Преподаватель математики", blurb: "Более 10 лет подготовки к олимпиадам и экзаменам." },
-        { name: "Преподаватель физики", blurb: "Лабораторный подход, демонстрации и интуиция." },
-        { name: "Преподаватель английского", blurb: "Уроки с упором на разговорную практику." },
-      ],
+    founder: {
+      title: "Основатель",
+      subtitle: "Опытный наставник, ориентированный на практику и результат.",
+      blurb: "Более 10 лет опыта в подготовке студентов и обеспечении академических успехов.",
     },
     schedule: {
       title: "Недельное расписание",
@@ -421,6 +427,11 @@ const I18N = {
         submit: "Отправить",
         courseOptions: ["Математика", "Физика", "Английский", "Программирование"],
         formatOptions: ["Группа", "Индивидуально", "Онлайн", "Очно"],
+        placeholders: {
+          name: "Артур Авагян",
+          email: "artur.avagyan@gmail.com",
+          time: "Вт 18:00",
+        },
       },
     },
     footer: {
@@ -433,16 +444,17 @@ const LangButton = ({ code, label, active, onClick }) => (
   <button
     onClick={onClick}
     aria-label={`Change language to ${label}`}
-    className={`inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 text-xs font-semibold ring-1 transition ${
+    className={`inline-flex items-center justify-center rounded-xl p-1.5 ring-1 transition ${
       active
-        ? "bg-white/15 text-white ring-white/30"
-        : "bg-white/5 text-sky-200 ring-white/10 hover:bg-white/10"
+        ? "bg-white/15 ring-white/30"
+        : "bg-white/5 ring-white/10 hover:bg-white/10"
     }`}
   >
-    <span className="text-base leading-none">
-      {code === "hy" ? "🇦🇲" : code === "en" ? "🇬🇧" : "🇷🇺"}
-    </span>
-    <span>{label}</span>
+    <img 
+      src={`/flags/${code === "hy" ? "am" : code === "en" ? "gb" : "ru"}.svg`}
+      alt={`${label} flag`}
+      className="w-6 h-4 object-cover rounded-sm"
+    />
   </button>
 );
 
@@ -580,12 +592,11 @@ export default function LandingPage() {
               alt={CONFIG.businessName[lang] + " logo"}
               className="h-10 w-auto md:h-12"
             />
-            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-400" />
             <span className="text-white font-semibold">{CONFIG.businessName[lang]}</span>
           </a>
           <nav className="hidden md:flex items-center gap-1">
             <NavLink href="#courses">{t("nav.courses")}</NavLink>
-            <NavLink href="#teachers">{t("nav.teachers")}</NavLink>
+            <NavLink href="#founder">{t("nav.founder")}</NavLink>
             <NavLink href="#schedule">{t("nav.schedule")}</NavLink>
             <NavLink href="#pricing">{t("nav.pricing")}</NavLink>
             <NavLink href="#faq">{t("nav.faq")}</NavLink>
@@ -641,15 +652,20 @@ export default function LandingPage() {
         </div>
       </Section>
 
-      {/* Teachers */}
-      <Section id="teachers" title={t("teachers.title")} subtitle={t("teachers.subtitle")}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t("teachers.items").map((tch, i) => (
-            <Card key={i}>
-              <div className="text-xl font-semibold text-white">{tch.name}</div>
-              <p className="mt-2 text-sm text-sky-200">{tch.blurb}</p>
-            </Card>
-          ))}
+      {/* Founder */}
+      <Section id="founder" title={t("founder.title")} subtitle={t("founder.subtitle")}>
+        <div className="flex justify-center">
+          <Card className="max-w-md">
+            <div className="text-center">
+              <img 
+                src={CONFIG.owner.photo} 
+                alt={CONFIG.owner.name[lang]} 
+                className="w-24 h-24 mx-auto rounded-full mb-4 ring-4 ring-white/10 object-cover"
+              />
+              <div className="text-xl font-semibold text-white">{CONFIG.owner.name[lang]}</div>
+              <p className="mt-2 text-sm text-sky-200">{t("founder.blurb")}</p>
+            </div>
+          </Card>
         </div>
       </Section>
 
@@ -744,7 +760,7 @@ export default function LandingPage() {
                     name="name"
                     required
                     className="w-full rounded-xl bg-white/5 px-4 py-3 text-white placeholder:text-sky-400 outline-none ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-sky-500/50"
-                    placeholder="Arthur Avagyan"
+                    placeholder={t("enroll.form.placeholders.name")}
                   />
                 </div>
                 <div>
@@ -754,7 +770,7 @@ export default function LandingPage() {
                     name="email"
                     required
                     className="w-full rounded-xl bg-white/5 px-4 py-3 text-white placeholder:text-sky-400 outline-none ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-sky-500/50"
-                    placeholder="arthura@gmail.com"
+                    placeholder={t("enroll.form.placeholders.email")}
                   />
                 </div>
               </div>
@@ -777,7 +793,7 @@ export default function LandingPage() {
                 </div>
                 <div>
                   <label className="mb-1 block text-sm text-sky-200">{t("enroll.form.time")}</label>
-                  <input name="time" placeholder="Tue 18:00" className="w-full rounded-xl bg-white/5 px-4 py-3 text-white ring-1 ring-white/10 focus:ring-2 focus:ring-sky-500/50" />
+                  <input name="time" placeholder={t("enroll.form.placeholders.time")} className="w-full rounded-xl bg-white/5 px-4 py-3 text-white placeholder:text-sky-400 ring-1 ring-white/10 focus:ring-2 focus:ring-sky-500/50" />
                 </div>
               </div>
               <div>
