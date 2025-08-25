@@ -19,7 +19,7 @@ const CONFIG = {
   },
   logo: "/logo.svg",
   phone: "+374 (94) 766-409",
-  email: "info@galstyanschool.com",
+  email: "tikogal96@gmail.com",
   address: {
     hy: "Երևան, Հայաստան",
     en: "Yerevan, Armenia",
@@ -37,6 +37,18 @@ const CONFIG = {
     subtext: "text-sky-200",
     accent: "from-sky-500 to-indigo-400",
     ring: "ring-sky-500/30",
+  },
+  pricing: {
+    group: {
+      amd: 5000,
+      rub: 1300, // ~1 AMD = 0.26 RUB
+      usd: 13,   // ~1 AMD = 0.0026 USD
+    },
+    private: {
+      amd: 10000,
+      rub: 2600, // ~1 AMD = 0.26 RUB
+      usd: 26,   // ~1 AMD = 0.0026 USD
+    },
   },
 };
 
@@ -100,7 +112,8 @@ const I18N = {
       title: "Հիմնադիր",
       subtitle:
         "Փորձառու մենթոր՝ հստակության, պրակտիկայի և արդյունքների վրա կենտրոնացած։",
-      blurb: "10+ տարվա փորձ ուսանողների պատրաստման և ակադեմիական հաջողության ապահովման բնագավառում։",
+      blurb: "10+ տարվա փորձ ուսանողների պատրաստման և ակադեմիական հաջողության ապահովման բնագավառում։ Մարատ Գալստյանը կրթության մեջ տեսնում է ապագայի հիմքը և հավատում, որ ամեն ուսանող կարող է հասնել բարձունքների՝ ճիշտ ղեկավարության և աջակցության դեպքում։ Նրա մոտեցումը հիմնված է անհատական բանալու վրա՝ ամեն ուսանողի հետ աշխատելիս նրա ուժեղ և թույլ կողմերը բացահայտելու և դրանց հիման վրա կառուցելու համար։",
+      mission: "Նպատակը պարզ է՝ ոչ միայն գիտելիքներ փոխանցել, այլև ներշնչել սովորելու սիրությունը և ինքնավստահությունը։ Մարատը համոզված է, որ կրթությունը պետք է լինի ոգևորիչ և գործնական՝ պատրաստելով ուսանողներին ոչ միայն քննությունների, այլև կյանքային մարտահրավերների համար։",
     },
     schedule: {
       title: "Շաբաթական ժամացույց",
@@ -128,24 +141,17 @@ const I18N = {
       tiers: [
         {
           name: "Խմբակային",
-          price: "֏12,000",
-          period: "90 րոպե",
+          price: "group",
+          period: "60 րոպե",
           features: ["Մինչև 8 ուսանող", "Շաբաթական արձագանք", "Վարժություններ"],
           cta: "Միանալ խմբին",
         },
         {
           name: "Անհատական",
-          price: "֏20,000",
+          price: "private",
           period: "60 րոպե",
           features: ["Անհատական պլան", "Ճկուն գրաֆիկ", "Թարմացումներ ծնողներին"],
-          cta: "Ամրագրել 1‑on‑1",
-        },
-        {
-          name: "Քննության պատրաստում",
-          price: "Պայմանագրով",
-          period: "ծրագիր",
-          features: ["Դիագնոստիկ թեստ", "Թիրախային ծրագիր", "Փորձարքային քննություններ"],
-          cta: "Ստանալ առաջարկ",
+          cta: "Ամրագրել անհատական",
         },
       ],
       note: "* Զեղչեր՝ ամսական փաթեթների և քույր-եղբայրների համար",
@@ -206,7 +212,7 @@ const I18N = {
       primary: "Join a Free Trial Lesson",
       secondary: "View Courses",
       smalls: [
-        "🎯 Small groups & 1‑on‑1",
+        "🎯 Small groups & private",
         "🧑‍🏫 Olympiad prep",
         "📝 Exam readiness (AT/IELTS/SAT)",
         "💻 Project‑based coding",
@@ -225,18 +231,19 @@ const I18N = {
     founder: {
       title: "Founder",
       subtitle: "Experienced mentor focused on clarity, practice, and results.",
-      blurb: "10+ years of experience in student preparation and ensuring academic success.",
+      blurb: "10+ years of experience in student preparation and ensuring academic success. Marat Galstyan sees education as the foundation of the future and believes that every student can reach great heights with the right guidance and support. His approach is based on finding the individual key to each student, working to discover their strengths and weaknesses and building upon them.",
+      mission: "The goal is clear: not just to transfer knowledge, but to inspire a love of learning and confidence. Marat is convinced that education should be inspiring and practical, preparing students not only for exams, but for life's challenges.",
     },
     schedule: {
       title: "Weekly schedule",
-      subtitle: "Flexible time slots. Choose group or 1‑on‑1.",
+      subtitle: "Flexible time slots. Choose group or private.",
       groups: [
         "Mon/Wed/Fri — 18:00–19:30 (Math / Physics)",
         "Tue/Thu — 18:00–19:30 (English / Programming)",
         "Sat — 12:00–14:00 (Mixed practice)",
       ],
       oneOnOne:
-        "1‑on‑1 lessons between 10:00–20:00. Tell us your preferred days and we’ll arrange.",
+        "Private lessons between 10:00–20:00. Tell us your preferred days and we'll arrange.",
     },
     results: {
       title: "Results you can expect",
@@ -253,24 +260,17 @@ const I18N = {
       tiers: [
         {
           name: "Group",
-          price: "֏12,000",
-          period: "per 90‑min lesson",
+          price: "group",
+          period: "per 60‑min lesson",
           features: ["Max 8 students", "Weekly progress notes", "Practice worksheets"],
           cta: "Join Group",
         },
         {
-          name: "1‑on‑1",
-          price: "֏20,000",
+          name: "Private",
+          price: "private",
           period: "per 60‑min lesson",
           features: ["Personal plan", "Flexible schedule", "Parent updates"],
-          cta: "Book 1‑on‑1",
-        },
-        {
-          name: "Exam Prep",
-          price: "Custom",
-          period: "per program",
-          features: ["Diagnostic test", "Targeted curriculum", "Mock exams"],
-          cta: "Get a Quote",
+          cta: "Book Private",
         },
       ],
       note: "* Discounts for monthly bundles and siblings available.",
@@ -301,7 +301,7 @@ const I18N = {
           "Tell us the student's grade, goals, and preferred schedule",
         submit: "Send",
         courseOptions: ["Math", "Physics", "English", "Programming"],
-        formatOptions: ["Group", "1‑on‑1", "Online", "In‑person"],
+        formatOptions: ["Group", "Private", "Online", "In‑person"],
         placeholders: {
           name: "Arthur Avagyan",
           email: "arthur.avagyan@gmail.com",
@@ -331,7 +331,7 @@ const I18N = {
       primary: "Записаться на бесплатный пробный урок",
       secondary: "Посмотреть курсы",
       smalls: [
-        "🎯 Небольшие группы и индивидуально",
+        "🎯 Небольшие группы и индивидуальные",
         "🧑‍🏫 Подготовка к олимпиадам",
         "📝 Подготовка к экзаменам (AT/IELTS/SAT)",
         "💻 Проектное программирование",
@@ -350,18 +350,19 @@ const I18N = {
     founder: {
       title: "Основатель",
       subtitle: "Опытный наставник, ориентированный на практику и результат.",
-      blurb: "Более 10 лет опыта в подготовке студентов и обеспечении академических успехов.",
+      blurb: "Более 10 лет опыта в подготовке студентов и обеспечении академических успехов. Марат Галстян видит в образовании основу будущего и верит, что каждый студент может достичь больших высот при правильном руководстве и поддержке. Его подход основан на поиске индивидуального ключа к каждому ученику, работая над выявлением их сильных и слабых сторон и опираясь на них.",
+      mission: "Цель ясна: не просто передать знания, а вдохновить на любовь к учебе и уверенность в себе. Марат убежден, что образование должно быть вдохновляющим и практичным, готовя студентов не только к экзаменам, но и к жизненным вызовам.",
     },
     schedule: {
       title: "Недельное расписание",
-      subtitle: "Гибкие слоты. Группы и индивидуально.",
+      subtitle: "Гибкие слоты. Группы и индивидуальные.",
       groups: [
         "Пн/Ср/Пт — 18:00–19:30 (Математика / Физика)",
         "Вт/Чт — 18:00–19:30 (Английский / Программирование)",
         "Сб — 12:00–14:00 (Смешанная практика)",
       ],
       oneOnOne:
-        "Индивидуально с 10:00 до 20:00. Сообщите удобные дни — подберём время.",
+        "Индивидуальные с 10:00 до 20:00. Сообщите удобные дни — подберём время.",
     },
     results: {
       title: "Ожидаемые результаты",
@@ -378,24 +379,17 @@ const I18N = {
       tiers: [
         {
           name: "Группа",
-          price: "֏12,000",
-          period: "за 90‑мин занятие",
+          price: "group",
+          period: "за 60‑мин занятие",
           features: ["До 8 учеников", "Еженедельный прогресс", "Практические задания"],
           cta: "Записаться в группу",
         },
         {
-          name: "Индивидуально",
-          price: "֏20,000",
+          name: "Индивидуальные",
+          price: "private",
           period: "за 60‑мин урок",
           features: ["Личный план", "Гибкий график", "Обратная связь для родителей"],
           cta: "Забронировать урок",
-        },
-        {
-          name: "Экзамены",
-          price: "Индивидуально",
-          period: "программа",
-          features: ["Диагностический тест", "Целевая программа", "Пробные экзамены"],
-          cta: "Получить предложение",
         },
       ],
       note: "* Скидки на абонементы и для братьев/сестёр.",
@@ -426,7 +420,7 @@ const I18N = {
           "Укажите класс, цели и предпочитаемое расписание",
         submit: "Отправить",
         courseOptions: ["Математика", "Физика", "Английский", "Программирование"],
-        formatOptions: ["Группа", "Индивидуально", "Онлайн", "Очно"],
+        formatOptions: ["Группа", "Индивидуальные", "Онлайн", "Очно"],
         placeholders: {
           name: "Артур Авагян",
           email: "artur.avagyan@gmail.com",
@@ -438,6 +432,16 @@ const I18N = {
       links: { enroll: "Запись", faq: "Вопросы", pricing: "Цены" },
     },
   },
+};
+
+const formatPrice = (type, lang) => {
+  const prices = CONFIG.pricing[type];
+  switch(lang) {
+    case 'hy': return `֏${prices.amd.toLocaleString()}`;
+    case 'en': return `$${prices.usd}`;
+    case 'ru': return `₽${prices.rub.toLocaleString()}`;
+    default: return `֏${prices.amd.toLocaleString()}`;
+  }
 };
 
 const LangButton = ({ code, label, active, onClick }) => (
@@ -509,13 +513,13 @@ const Feature = ({ icon, title, desc }) => (
   </Card>
 );
 
-const PricingCard = ({ name, price, period, features, cta, ctaHref = "#enroll" }) => (
+const PricingCard = ({ name, price, period, features, cta, ctaHref = "#enroll", lang }) => (
   <Card>
     <div className="flex flex-col h-full">
       <div>
         <h3 className="text-xl font-semibold text-white">{name}</h3>
         <div className="mt-4 flex items-end gap-1">
-          <div className="text-4xl font-bold text-white">{price}</div>
+          <div className="text-4xl font-bold text-white">{formatPrice(price, lang)}</div>
           <div className="text-sm text-sky-200">/{period}</div>
         </div>
         <ul className="mt-6 space-y-2 text-sm text-sky-200">
@@ -660,10 +664,13 @@ export default function LandingPage() {
               <img 
                 src={CONFIG.owner.photo} 
                 alt={CONFIG.owner.name[lang]} 
-                className="w-24 h-24 mx-auto rounded-full mb-4 ring-4 ring-white/10 object-cover"
+                className="w-96 h-96 mx-auto rounded-full mb-4 ring-4 ring-white/10 object-cover"
               />
               <div className="text-xl font-semibold text-white">{CONFIG.owner.name[lang]}</div>
               <p className="mt-2 text-sm text-sky-200">{t("founder.blurb")}</p>
+              {t("founder.mission") && (
+                <p className="mt-4 text-sm text-sky-200 italic">{t("founder.mission")}</p>
+              )}
             </div>
           </Card>
         </div>
@@ -681,7 +688,7 @@ export default function LandingPage() {
             </ul>
           </Card>
           <Card>
-            <h3 className="text-white font-semibold">1‑on‑1</h3>
+            <h3 className="text-white font-semibold">{lang === "hy" ? "Անհատական" : lang === "en" ? "Private" : "Индивидуальные"}</h3>
             <p className="mt-3 text-sm text-sky-200">{t("schedule.oneOnOne")}</p>
           </Card>
         </div>
@@ -710,6 +717,7 @@ export default function LandingPage() {
               period={tier.period}
               features={tier.features}
               cta={tier.cta}
+              lang={lang}
             />
           ))}
         </div>
