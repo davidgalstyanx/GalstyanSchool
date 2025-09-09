@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to Master
 
 on:
   push:
@@ -6,23 +6,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -32,12 +25,21 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy built files to master
+        run: |
+          # Remove old built files if they exist
+          rm -rf docs
+          # Create docs directory and copy built files
+          mkdir docs
+          cp -r dist/* docs/
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Add and commit if there are changes
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "Deploy built files to docs/ folder"
+            git push origin master
+          fi
