@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGradient" cx="0.5" cy="0.4">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </radialGradient>
+    
+    <!-- Graduation cap main gradient -->
+    <linearGradient id="capMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="30%" stop-color="#374151"/>
+      <stop offset="70%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    
+    <!-- Cap band gradient -->
+    <linearGradient id="capBand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6b7280"/>
+      <stop offset="50%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+
+    <!-- Golden tassel -->
+    <linearGradient id="goldTassel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- 3D shadow effect -->
+    <filter id="shadow3d" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="54" fill="url(#bgGradient)" stroke="#38bdf8" stroke-width="2"/>
+  
+  <!-- LARGE GRADUATION CAP - Centered on blue background -->
+  
+  <!-- Cap band (cylindrical base) - centered -->
+  <ellipse cx="60" cy="55" rx="30" ry="5" fill="url(#capBand)" stroke="#4b5563" stroke-width="1" filter="url(#shadow3d)"/>
+  
+  <!-- Main mortarboard (square cap top) - centered and properly sized -->
+  <rect x="25" y="35" width="70" height="70" rx="2" ry="2" fill="url(#capMain)" stroke="#374151" stroke-width="1.5" 
+        transform="rotate(-3 60 70)" filter="url(#shadow3d)"/>
+  
+  <!-- Cap top surface highlight -->
+  <rect x="25" y="35" width="70" height="12" rx="2" ry="2" fill="#6b7280" opacity="0.6" 
+        transform="rotate(-3 60 70)"/>
+  
+  <!-- Center button on cap -->
+  <circle cx="60" cy="50" r="3" fill="url(#goldTassel)" stroke="#d97706" stroke-width="1" filter="url(#shadow3d)"/>
+  
+  <!-- Tassel cord -->
+  <line x1="60" y1="50" x2="85" y2="30" stroke="#d97706" stroke-width="2.5" opacity="0.9"/>
+  
+  <!-- Realistic tassel with multiple strands -->
+  <g transform="translate(85,30)" filter="url(#shadow3d)">
+    <line x1="0" y1="0" x2="4" y2="10" stroke="url(#goldTassel)" stroke-width="1.8"/>
+    <line x1="0" y1="0" x2="1" y2="11" stroke="url(#goldTassel)" stroke-width="1.6"/>
+    <line x1="0" y1="0" x2="0" y2="12" stroke="url(#goldTassel)" stroke-width="1.6"/>
+    <line x1="0" y1="0" x2="-2" y2="10" stroke="url(#goldTassel)" stroke-width="1.6"/>
+    <line x1="0" y1="0" x2="2" y2="9" stroke="url(#goldTassel)" stroke-width="1.4"/>
+    <line x1="0" y1="0" x2="-1" y2="11" stroke="url(#goldTassel)" stroke-width="1.4"/>
+    <!-- Tassel end -->
+    <ellipse cx="0.5" cy="11" rx="3" ry="1.5" fill="url(#goldTassel)" opacity="0.8"/>
+  </g>
+  
+  <!-- Big prominent Letter G - positioned at bottom -->
+  <text x="60" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" 
+        text-anchor="middle" fill="#ffffff" filter="url(#shadow3d)">G</text>
+  
+  <!-- Small academic excellence stars -->
+  <polygon points="15,15 16,18 19,18 17,20 18,23 15,21 12,23 13,20 11,18 14,18" 
+           fill="#fbbf24" opacity="0.8"/>
+  <polygon points="105,15 106,18 109,18 107,20 108,23 105,21 102,23 103,20 101,18 104,18" 
+           fill="#fbbf24" opacity="0.8"/>
+</svg>
