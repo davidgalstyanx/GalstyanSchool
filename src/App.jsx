@@ -3,6 +3,12 @@
 
 import { useState, useEffect } from "react";
 
+// Helper function to get asset URLs with proper base path
+const getAssetUrl = (path) => {
+  const base = import.meta.env.BASE_URL || '/';
+  return base + path.replace(/^\//, '');
+};
+
 const CONFIG = {
   businessName: {
     hy: "Գալստյան Դպրոց",
@@ -15,9 +21,9 @@ const CONFIG = {
       en: "Marat Galstyan",
       ru: "Марат Галստян",
     },
-    photo: "/owner.jpg",
+    photo: getAssetUrl("/owner.jpg"),
   },
-  logo: "/logo.svg",
+  logo: getAssetUrl("/logo.svg"),
   phone: "+374 (94) 766-409",
   email: "tikogal96@gmail.com",
   address: {
@@ -455,7 +461,7 @@ const LangButton = ({ code, label, active, onClick }) => (
     }`}
   >
     <img 
-      src={`/flags/${code === "hy" ? "am" : code === "en" ? "gb" : "ru"}.svg`}
+      src={getAssetUrl(`/flags/${code === "hy" ? "am" : code === "en" ? "gb" : "ru"}.svg`)}
       alt={`${label} flag`}
       className="w-6 h-4 object-cover rounded-sm"
     />
